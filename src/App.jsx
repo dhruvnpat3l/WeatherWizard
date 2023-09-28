@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [searchInput, setSearchInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isCelsius, setIsCelsius] = useState(true);
+
   
-  
-// Function to handle the search button click
+
   const apiKey = 'c69c16d84589e23896552bf6179e8c8c';
 
   const handleSearch = async () => {
@@ -31,8 +30,7 @@ function App() {
       );
 
       setWeatherData(response.data);
-      console.log(response.data.weather[0].description)
-      setWeatherDescription(response.data.weather[0].description);
+      
       setLoading(false);
     } catch (err) {
       setError('City not found');
@@ -67,6 +65,7 @@ function App() {
       getWeatherInfo();
     }, []); 
 
+    // Function to toggle temperature units between Celsius and Fahrenheit
     const toggleTemperatureUnit = () => {
       setIsCelsius(!isCelsius);
     };
@@ -89,7 +88,7 @@ function App() {
                        <p>Weather Wizard</p> 
                       </div>
             
-                      {/* input box  */}
+                        {/* Input box for city search */}
                         <div
                           className='mt-2 '
                         >
@@ -106,8 +105,6 @@ function App() {
                           onClick={handleSearch}>Search</button>
                         </div>
             
-                       {/* Toggle button for temperature units */}
-                       
                       <div className='text-black'>
                         {/* toggle button  */}
                         <div 
@@ -129,7 +126,8 @@ function App() {
                             </span>
                           </label> 
                         </div>
-            
+                        
+                          {/* Display weather information */}
                           {loading ? (
                             <p>Loading weather data...</p>
                           ) : error ? (
@@ -150,7 +148,7 @@ function App() {
                               </p>
                               {/* Rest of the weather information */}
                               <p>Humidity: {weatherData.main.humidity}%</p>
-                              <p>Wind Speed: {weatherData.wind.speed}</p>
+                              <p>Wind Speed: {weatherData.wind.speed} mph</p>
                               <p>Weather: {weatherData.weather[0].description}</p>
                             </div>
                           ) : null}
@@ -158,8 +156,9 @@ function App() {
             </header>
         </div>
 
+        
       </div>
-      {/* location */}
+   
       
 
     </div>
