@@ -120,7 +120,7 @@ function App() {
                             <span className="h-6 px-4 rounded-sm  bg-white text-white peer-checked:bg-black">
                               {isCelsius ? '°C' : null}
                             </span>
-                            <span className="h-6 px-4 rounded-sm bg-black dark:text-white peer-checked:bg-white">
+                            <span className="h-6 px-4 rounded-sm bg-black peer-checked:bg-white">
                               {isCelsius ? null : '°F'}
                             </span>
                           </label> 
