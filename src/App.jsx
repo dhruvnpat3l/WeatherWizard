@@ -131,7 +131,7 @@ function App() {
                           ) : error ? (
                             <p className='text-xl pl-2'>{error}</p>
                           ) : weatherData ? (
-                            <div className='font-semibold text-xl p-2 '>
+                            <div className='sm:font-semibold text-xl p-2 '>
                             
                               <p>Weather Information for 
                                   <p className='sm:font-bold text-5xl font-PantonRust'>
