@@ -109,7 +109,7 @@ function App() {
                         <div 
                           className="toggle-container text-black"
                         >
-                          <label for="TemperatureToggle" className="h-8 w-21 rounded-sm border-2 border-black mt-2 inline-flex items-center p-1 cursor-pointer bg-white">
+                          <label for="TemperatureToggle" className="h-8 w-21 rounded-sm border-2 border-black mt-2 inline-flex items-center p-1  bg-white">
                             <input
                               id="TemperatureToggle"
                               type="checkbox"
@@ -120,7 +120,7 @@ function App() {
                             <span className="h-6 px-4 rounded-sm  bg-white text-white peer-checked:bg-black">
                               {isCelsius ? '°C' : null}
                             </span>
-                            <span className="h-6 px-4 rounded-sm bg-black peer-checked:bg-white">
+                            <span className="h-6 px-4 rounded-sm bg-black text-white peer-checked:bg-white">
                               {isCelsius ? null : '°F'}
                             </span>
                           </label> 
