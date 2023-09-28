@@ -82,7 +82,7 @@ function App() {
             <header 
               className="App-header text-white ">
                   <div
-                    className='w-48  border-2 p-2  font-bold font-PantonRust text-3xl  text-black    bg-[#f15412] border-black'
+                    className='w-48  border-2 p-2  font-bold sm:font-PantonRust text-3xl  text-black    bg-[#f15412] border-black'
                   >
                        <p>Weather Wizard</p> 
                       </div>
