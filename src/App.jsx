@@ -10,6 +10,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isCelsius, setIsCelsius] = useState(true);
+  const [weatherDescription, setWeatherDescription] = useState('');
   
 
   const apiKey = 'c69c16d84589e23896552bf6179e8c8c';
@@ -31,6 +32,8 @@ function App() {
       );
 
       setWeatherData(response.data);
+      console.log(response.data.weather[0].description)
+      setWeatherDescription(response.data.weather[0].description);
       setLoading(false);
     } catch (err) {
       setError('City not found');
@@ -39,31 +42,31 @@ function App() {
   };
 
   // user lcoation weather
-  useEffect(() => {
-    const getWeatherInfo = () => {
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(async (position) => {
-          const { latitude, longitude } = position.coords;
+    useEffect(() => {
+      const getWeatherInfo = () => {
+        if ('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(async (position) => {
+            const { latitude, longitude } = position.coords;
 
-          try {
-            const weatherResponse = await fetch(
-              `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
-            );
+            try {
+              const weatherResponse = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+              );
 
-            const weatherData = await weatherResponse.json();
-            setWeatherData(weatherData);
-          } catch (error) {
-            console.error('Error fetching weather data:', error);
-          }
-        });
-      } else {
-        console.error('Geolocation is not supported in this browser.');
-      }
+              const weatherData = await weatherResponse.json();
+              setWeatherData(weatherData);
+            } catch (error) {
+              console.error('Error fetching weather data:', error);
+            }
+          });
+        } else {
+          console.error('Geolocation is not supported in this browser.');
+        }
     };
 
     // Call the function to get weather data when the component mounts
       getWeatherInfo();
-    }, []);
+    }, []); 
 
     const toggleTemperatureUnit = () => {
       setIsCelsius(!isCelsius);
@@ -153,19 +156,6 @@ function App() {
                   </div>
             </header>
         </div>
-
-        {/* Cloud Animation */}
-    <div className="absolute sm:top-0 sm:right-0 top-72 left-20  w-1/3 overflow-hidden">
-        <img 
-          className='mt-10'
-          src={rainumbrella} />
-    </div>
-    <div className="hidden absolute mt-10 mr-10 top-0 right-0 w-1/3 h-5/6 overflow-hidden">
-      <img 
-        className='border-2 border-black'
-        src={thunderstorm} 
-      />
-    </div>
 
       </div>
       {/* location */}
