@@ -1,10 +1,10 @@
 # Weather App
 
-![Weather App Screenshot](screenshot.png)
+The Weather Wizard is a simple web application that allows users to check the current weather conditions for a specific location. It provides real-time weather data, including temperature, humidity, wind speed, and weather description. Users can also toggle between Celsius and Fahrenheit temperature units.
 
-## Overview
+## 🚀 Demo
+Check out the live demo [here](https://weatherwizards.vercel.app/) .
 
-The Weather App is a simple web application that allows users to check the current weather conditions for a specific location. It provides real-time weather data, including temperature, humidity, wind speed, and weather description. Users can also toggle between Celsius and Fahrenheit temperature units.
 
 ## Features
 
@@ -12,7 +12,7 @@ The Weather App is a simple web application that allows users to check the curre
 - Toggle between Celsius and Fahrenheit temperature units.
 - User-friendly and responsive interface.
 
-## Technologies Used
+## 💻 Technologies Used
 
 - React.js
 - Axios (for making API requests)
@@ -20,11 +20,9 @@ The Weather App is a simple web application that allows users to check the curre
 - OpenWeatherMap API (for weather data)
 - Tailwind CSS (for styling)
 
-## Installation
+## 📷 Screenshots
 
-To run this application locally, follow these steps:
+<img src='./src/assets/PC snapshot.png' height="400" alt='watchlist'>
 
-1. Clone the repository to your local machine:
+<img src='./src/assets/SmartphoneSnapshot.jpg' height="400" alt='watchlist'>
 
-   ```bash
-   git clone https://github.com/yourusername/weather-app.git
