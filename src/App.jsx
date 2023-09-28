@@ -134,7 +134,7 @@ function App() {
                             <div className='font-semibold text-xl p-2 '>
                             
                               <p>Weather Information for 
-                                  <p className='font-bold text-5xl font-PantonRust'>
+                                  <p className='font-bold text-5xl sm:font-PantonRust'>
                                     {weatherData.name}, {weatherData.sys.country}
                                   </p> 
                               </p>
