@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import rainumbrella from './assets/rainumbrella.gif'
-import thunderstorm from './assets/thunderstorm.webp'
+
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -10,9 +9,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isCelsius, setIsCelsius] = useState(true);
-  const [weatherDescription, setWeatherDescription] = useState('');
   
-
+  
+// Function to handle the search button click
   const apiKey = 'c69c16d84589e23896552bf6179e8c8c';
 
   const handleSearch = async () => {
@@ -41,7 +40,7 @@ function App() {
     }
   };
 
-  // user lcoation weather
+  // useEffect to fetch weather data based on user's geolocation when the component mounts
     useEffect(() => {
       const getWeatherInfo = () => {
         if ('geolocation' in navigator) {
@@ -107,6 +106,8 @@ function App() {
                           onClick={handleSearch}>Search</button>
                         </div>
             
+                       {/* Toggle button for temperature units */}
+                       
                       <div className='text-black'>
                         {/* toggle button  */}
                         <div 
